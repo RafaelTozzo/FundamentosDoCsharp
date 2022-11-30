@@ -9,6 +9,8 @@
 
 <br>
 
+https://github.com/RafaelTozzo/FundamentosDoCsharp/blob/master/Fundamentos%20C%23.txt
+
 https://balta.io/ 
 
 <br>
