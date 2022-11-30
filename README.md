@@ -9,7 +9,9 @@
 
 <br>
 
-https://github.com/RafaelTozzo/FundamentosDoCsharp/blob/master/Fundamentos%20C%23.txt
+Txt file with all studies done (631 rows): https://github.com/RafaelTozzo/FundamentosDoCsharp/blob/master/FundamentosDoCSharp.txt
+
+<br>
 
 https://balta.io/ 
 
