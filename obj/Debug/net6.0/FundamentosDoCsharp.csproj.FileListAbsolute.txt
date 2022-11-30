@@ -1,0 +1,15 @@
+C:\Users\Rafael\Ti\Csharp\Balta.io\FundamentosDoCsharp\bin\Debug\net6.0\FundamentosDoCsharp.exe
+C:\Users\Rafael\Ti\Csharp\Balta.io\FundamentosDoCsharp\bin\Debug\net6.0\FundamentosDoCsharp.deps.json
+C:\Users\Rafael\Ti\Csharp\Balta.io\FundamentosDoCsharp\bin\Debug\net6.0\FundamentosDoCsharp.runtimeconfig.json
+C:\Users\Rafael\Ti\Csharp\Balta.io\FundamentosDoCsharp\bin\Debug\net6.0\FundamentosDoCsharp.dll
+C:\Users\Rafael\Ti\Csharp\Balta.io\FundamentosDoCsharp\bin\Debug\net6.0\FundamentosDoCsharp.pdb
+C:\Users\Rafael\Ti\Csharp\Balta.io\FundamentosDoCsharp\obj\Debug\net6.0\FundamentosDoCsharp.csproj.AssemblyReference.cache
+C:\Users\Rafael\Ti\Csharp\Balta.io\FundamentosDoCsharp\obj\Debug\net6.0\FundamentosDoCsharp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rafael\Ti\Csharp\Balta.io\FundamentosDoCsharp\obj\Debug\net6.0\FundamentosDoCsharp.AssemblyInfoInputs.cache
+C:\Users\Rafael\Ti\Csharp\Balta.io\FundamentosDoCsharp\obj\Debug\net6.0\FundamentosDoCsharp.AssemblyInfo.cs
+C:\Users\Rafael\Ti\Csharp\Balta.io\FundamentosDoCsharp\obj\Debug\net6.0\FundamentosDoCsharp.csproj.CoreCompileInputs.cache
+C:\Users\Rafael\Ti\Csharp\Balta.io\FundamentosDoCsharp\obj\Debug\net6.0\FundamentosDoCsharp.dll
+C:\Users\Rafael\Ti\Csharp\Balta.io\FundamentosDoCsharp\obj\Debug\net6.0\refint\FundamentosDoCsharp.dll
+C:\Users\Rafael\Ti\Csharp\Balta.io\FundamentosDoCsharp\obj\Debug\net6.0\FundamentosDoCsharp.pdb
+C:\Users\Rafael\Ti\Csharp\Balta.io\FundamentosDoCsharp\obj\Debug\net6.0\FundamentosDoCsharp.genruntimeconfig.cache
+C:\Users\Rafael\Ti\Csharp\Balta.io\FundamentosDoCsharp\obj\Debug\net6.0\ref\FundamentosDoCsharp.dll

@@ -1,0 +1,688 @@
+Fundamentos do C#
+
+Diferenças entre linguagem compilada e interpretada.
+
+C# = Linguagem compilada para o binario
+	Prós:
+	-Tempo de compilação tem as detecções dos erros e bugs de forma mais rapida
+	-Tamanho menor das aplicações
+	-Maior otimização/desempenho da execução
+	-Apenas um arquivo final
+
+	Contras:
+	-Precisa de um compilador
+	-Pode ser mais burocratica
+	
+
+JavaScript = Linguagem interpretada pelo navegador
+	Prós:
+	-Não precisa ser complida
+	-Correções mais faceis de serem executadas
+	-Mais simples de serem distribuidas
+	
+		
+	Contras:
+	-Detecção de erros, se caso esquecer de um ; isso só vai acontecer em tempo de execução
+	quando o navegador estiver tentando reenderizar, o bug aparece direto para o usuario.
+	-Tamnho final da aplicaçã é maior
+	-Menor otimização da execução
+	-Multiplos arquivos
+
+
+C# - Código gerenciado:
+Faz a aloação na memoria de forma gerenciada não dependendo do desenvolvedor para fazer isso, linguagens como 
+C e C++ faz alocação na memoria manualmente, assim podendo acessar uma que estaria reservada para o sistema e 
+causando a tela azul do windows, pois tentou alocar algo numa memoria que estava reservada para o sistema
+operacional.
+
+
+IL - Intermediate Language
+O código escrito dentro do ambiente .NET como nas linguages C#, VB.NET, F#, Cobol é compilado para o IL(intermediate leanguage)
+fazendo o gerenciamento de memória(alocação na memória) de forma automatica e igual após esse processo, é gerado o Binário.
+
+Código C#, VB.NET, F#, Cobol --------> IL(Intermediate Language) ----------> CLR Código Binário
+
+
+CLR - Common Language RunTime
+Compila o código da IL para o código de maquina(binário)
+
+
+JIT - Just In Time
+A conversão do IL para binário é conhecido como JIT
+
+
+Frameworks definições:
+Um conjunto de bibliotecas já testadas e aplicadas
+
+
+Runtime
+Usado para rodar as aplicaçoes, ele apenas executa o arquivo .exe
+
+
+CLI - Command Line Interface
+Usando comandos no terminal
+
+Comandos no terminal :
+	dotnet --version (verifica a versao)
+	dotnet --list-sdks (lista os sdks instalados)
+	dotnet --list-runtimes
+	dotnet help
+
+Definições:
+	- Class Library
+		- O resultado final é uma DLL (DLL é uma bliblioteca de dados que pode ser usado por mais de um programa ao mesmo tempo
+		isso ajuda a reutilização de codigo e uso eficiente da memoria)
+		- Não possui Interface
+	
+	- Console Application
+		- O resultado final é uma aplicação que roda no terminal
+		- Pode receber dados, esperar input do usúario
+	
+	- Projeto Web
+		- ASP.NET Web
+		- ASP.NET MVC
+		- ASP.NET WebAPI
+	
+	- Projeto Testes
+		- Microsoft Tests
+
+	- dotnet cli (linha de comando prompt)
+		- dotnet new console => Novo Console Application 
+		- dotnet new console -o ApplicationName (-o define o nome da pasta criada)
+		- dotnet new classlib => Nova Class Library
+		- dotnet new web => Novo projeto ASP.NET Core
+		- dotnet new mvc => Novo projeto ASP.NET Core
+		- dotnet new webapi => Novo projeto ASPT.NET Core
+		- dotnet new mstest => Novo projeto Microsoft Teste
+
+Sempre começar projeto .NET com Uppercase
+
+- dotnet restore (cli)
+	- Quando executar uma aplicação dotnet, usar o comando dotnet restore para baixar as dependencias do projeto.
+
+- dotnet clean (limpa o cache da aplicação)
+- dotnet build (builda aplicação)
+- dotnet run (roda aplicação)
+
+Variaveis de ambiente:
+	- Definições:
+		- Dedenvoldimento
+		- Homologação
+		- Produção
+	
+	- Cada ambiente possui suas configurações
+		- Chaves de acesso externo
+		- Conexões com banco de dados
+		
+Importações:
+	- Definições
+		- Utilizando a palavra reservada using
+		- (Obs: Semelhante ao import do Flutter, para usar metodos ou namespaced de outras classes) 
+
+Variáveis:
+	- Definições:
+		- Usada para armazenar um informação ou valor
+		- Pode ter seu valor ou informação alterado a qualquer momento
+		
+Constantes:
+	- Definições
+		- São mais otimizadas que as Variáveis
+		- NÂO PODEM ser alteradas
+		- São utilizadas para armazenar uma informação
+		- Uma vez criadas somos obrigados a atribuir um valor
+		- Recomendadas para usos frequentes
+		- Ex1: const int IDADE_MINIMA;
+		- Ex2: const int IDADE_MINIMA = 25;
+		- Padrão usar todas letras maiusculas separadas por _ (underline)
+
+Tipo primitivos C#:
+	Byte:
+		- byte (8-bit) 0 até 255
+		- sbyte (8-bit) -128 até 127 (Obs: sbyte significa Signed Byte)
+
+	Numeros Inteiros:
+		- short (16-bit) -32.768 to 32.767
+		- ushort (16-bit) 0 até 65.535
+		- int (32-bit) -2.147.483.648 até 2.147.483.647
+		- uint (32-bit) 0 até 4.294.967.295
+		- long (64-bit) -9.223.372.036.854.775.808 até 9.223.372.036.854.775.807
+		- ulong (64-bit) 0 até 18.446.744.073.709.51.615
+
+		No caso dos numeros inteiros o "u" unsigned é usado para definir que o numero não pode ser negativo
+		
+	Numeros Reais:
+		float:
+			(32-bit) -3.402823e38 até 3402823e38 
+			(notação F)
+			Ex: float salario = 2.500f;
+			
+		double:
+			(64-bit) -1.79769313486232e308 até 1.79769313486232e308
+			Ex: double salario = 2.500;
+
+		decimal:
+			(+ ou-) 1.0 x 10e-28 até 7.9 x 10e28
+			(notação M)
+			Ex: decimal salario = 2.500m;
+
+	Boolean:
+		- bool (8-bit) true ou false
+
+	Char:
+		- char (16-bit) qualquer caractere
+		Ex: char primeiraLetra = 'C'; 
+			var segundaLetra = 'D';
+			Obs: se usar " " significa uma cadeia de caracteres e não um char! Para identificar como char usar ' ' aspas simples.
+
+	String:
+		- string (tamanho em bit depende do tamnho da string) uma cadeia de caracteres
+		Ex: string nome = "Rafael";
+			var nome = "Rafael";
+		Obs: atribuição por aspas duplas " "
+
+	Var:
+		- Substitui o nome de um tipo 	
+		- Será do tipo do primeiro valorr atribuido
+		- Recomendado o uso do var
+
+	Object:
+		- tipo genérico que recebe qualquer valor ou objeto
+		- caso não saiba o tipo da informação ou ela seja de vários tipos diferentes
+		- não possui intelisense(Ajuda dos editore) por ser um tipo desconhecido
+		- EVITE USAR
+		Ex: object idade = 25; - será do tipo object e não um int
+			object nome = "Rafael"; - será do tipo object e não uma string
+
+	Null:
+		- significa vazio, nada 
+		- diferente de zero ou uma string vazia
+		- todo tipo primitivo ou complexo pode reber o valor null 
+		- o tipo deve ser marcado como Nullable Type 
+		Ex: int? idade = null;
+
+
+Parse:
+	- método presento em todo tipo primitivo
+	- usado para converter um caractere ou uma string para um tipo qualquer
+	Ex: int numero = int.Parse("100");
+
+Convert:
+	- similar ao Parse
+	- permite converter varios tipos de valores e não apenas string 
+	- devemos informar o tipo na chamada da conversão
+	Ex: int numero = Convert.ToInt32("100");
+
+
+Operadores Aritmeticos:
+	- soma: +
+	- subtração: -
+	- multiplicação: *
+	- divisão: /
+
+
+Operadores de Atribuição:
+	x += 5 é o mesmo que x = x + 5
+	Exemplos:
+		int x = 0;
+		x += 5; é o mesmo que x = x + 5;
+		x -= 1; é o mesmo que x = x - 1;
+		x *= 8; é o mesmo que x = x * 8;
+		x /= 2; é o mesmo que x = x / 2;
+
+
+Operadores de Comparação:
+	- igual: ==
+	- diferente !=
+	- maior que >
+	- menor que <
+	- maior ou igual >=
+	- menor ou igual <=
+
+
+Operadore Lógicos:
+	- and: &&
+	- or: ||
+	- not: !
+	Exemplos:
+	int x = 12;
+	bool entre: (x > 25) && (x < 40); false
+	bool ou: (x > 25) || (x < 40); true
+	bool negação: !(x < 25); 
+
+
+Estruturas Condicionais:
+	
+	if:
+		if (condicao){ caso true faça isso
+			...
+		} else { caso false faça isso
+			...
+		}
+
+
+		if (condicao){ caso true faça isso
+			...
+		} else if (condicao) { senão testa outra condição
+			...
+		} else if (condicao) { senão testa outra condição
+			...
+		} else { senão acontecer nenhuma das anteriores
+			...
+		}
+
+
+	switch:
+
+		- é normal executar funções dentro dos cases
+
+		Exemplo:
+		int valor = 1;
+		switch (valor)
+		{
+			case 1: Console.WriteLine("1"); break;
+			case 2: Console.WriteLine("2"); break;
+			case 3: Console.WriteLine("3"); break;
+			default: Console.WriteLine("4"); break;
+		}
+
+		Exemplo:
+		string name = "Juca";
+		switch (name)
+		{
+			case "Maria": Console.WriteLine("Usuario secundario"); break;
+			case "Ricardo": Console.WriteLine("Não cadastrado"); break;
+			case "Juca": Console.WriteLine("Usuario principal"); break;
+			default: Console.WriteLine("Outro usuario"); break;
+		}
+
+
+Laçõs de repetição FOR:
+	
+	Exemplo:
+	for (var i = 0; i <= 100; i += 5)
+           {
+               Console.WriteLine($"Somando de 5 em 5: {i}");
+           }
+
+	Exemplo:
+	for (var i = 0; i <= 10; i += 2)
+		{
+			Console.WriteLine($"Somando de 2 em 2: {i}");
+		}
+
+
+Laçõs de repetição WHILE:
+	
+	Exemplo:
+	var valor = 0;
+	while (valor <= 5)
+	{
+		Console.WriteLine(valor);
+		valor++;
+	}
+
+
+Laçõs de repetição DO WHILE:
+
+	Exemplo:
+	var valor = 0;
+        do
+        {
+        	Console.WriteLine("Teste");
+            valor++;
+        } while (valor < 5);
+
+
+Funções e Metodos:
+	- o main é um exemplo de método
+	- possui um retorno, um nome e parametros
+	- esta composição é camada de assinatura
+	- começam sempre com letra maiuscula
+
+	Exemplo:
+	static string RetornaNome(string nome, string sobrenome)
+	{
+		return nome + " " + sobrenome;
+	}
+
+
+Heap e Stack:
+	- a memoria é dividida em duas partes, Heap e Stack
+	- Heap armazena os dados
+	- Stack armazen as referencias para os dados
+
+Value Types:
+	Qualquer tipo no .NET é tratado como:
+		- Tipo de Referencia (Reference Type)
+		- Tipo de Valor (Value Type)
+		- Tipos de valor armazenam dados
+		- São armazenados em um local da memoria chamsa Stack
+
+
+Structs:
+	- não pode estar dentro de outra classe
+	- tipo de valor
+	- armazenam apenas outros tipos de dados
+	- defido pela palavra strutc 
+	- composto por prioridades e metodos
+	- nome sempre com maiuculo:
+		O mesmo para propriedades e metodos
+	- criado a partir da palavra NEW:
+		neste momento sim temos os valores
+
+
+Enums:
+	- usado para fornecer uma melhor visualização do codigo
+	- substituem o uso de inteiros
+	- usados em listas curtas
+	- usados em dados fixos:
+		hard coded
+	- sempre em maiuculo
+		começar com a letra E
+
+Guid:
+	- usado para criar IDs randomicos
+	Ex: var id = Guid.NewGuid();
+		Console.WriteLine(id);
+
+		resultado IDs randomicos
+		a19b7258-f52b-4b87-b66f-48b556db0910
+		c70ee83a-7f37-4594-bbd1-8aee707e7a5d
+
+Formatação String:
+	var price = 10.2;
+	var texto = $"O valor é {price}";
+	Console.WriteLine(texto);
+
+	resultado:
+	O valor é 10.2
+
+	Obs: para caracteres especiais usar $@"A temperatura atual é {temp}º"
+
+Comparação de Strings:
+	Obs: Retorna um bool 
+
+	var texto = "Este texto é um teste";
+
+	- Contains
+	Console.WriteLine(texto.Contains("teste")); 
+	Return: True
+
+	Console.WriteLine(texto.Contains("Teste"));
+	Return: False
+
+	
+	Console.WriteLine(texto.Contains("Teste", StringComparison.OrdinalIgnoreCase));
+	Return: True
+
+Comparação Strings StartsWith/EndsWith:
+	var texto = "Este texto é um teste";
+
+	Console.WriteLine(texto.StartsWith("Este"));
+	Return: True
+
+	Console.WriteLine(texto.StartsWith("este"));
+	Return: False
+
+	Console.WriteLine(texto.StartsWith("este", StringComparison.OrdinalIgnoreCase));
+	Return: True
+
+Comparação Strings Equals:
+	var texto = "Este texto é um teste";
+
+	- Equals
+	Console.WriteLine(texto.Equals("Este texto é um teste"));
+	Return: True
+
+	Console.WriteLine(texto.Equals("este texto é um teste"));
+	Return: False
+
+	var teste = 33;
+	teste.Equals()
+
+Strings Index dentro de um array / list
+	var texto = "Este texto é um teste";
+
+	- IndexOf
+	Console.WriteLine(texto.IndexOf("é")); 
+	Return: 11 
+
+	- LastIndexOf
+	Console.WriteLine(texto.LastIndexOf("s")); 
+	Return 18
+
+	Obs: pega a posição do Index no array.
+	Obs: Se a variavel é uma string precisa passar uma string no IndexOf, se caso for um int passar um inteiro
+
+Strings métodos adicionais:
+	var texto = "Este texto é um teste";
+
+	- ToLower
+	Console.WriteLine(texto.ToLower());
+	Return: este texto é um teste
+
+	- ToUpper
+	Console.WriteLine(texto.ToUpper());
+	Return: ESTE TEXTO É UM TESTE
+
+	- Insert
+	Console.WriteLine(texto.Insert(11, "aqui ")); Obs: Adiciona algo apartir do Index selecionado
+	Return: Este texto aqui é um teste
+
+	- Remove
+	Console.WriteLine(texto.Remove(11, 5));
+	Return: Este texto é um teste
+
+	- Length
+	Console.WriteLine(texto.Length);
+	Return: 21
+
+Manipulando Strings
+	var texto = "Este texto é um teste";
+
+	- Replace
+	Console.WriteLine(texto.Replace("Este", "Aqui"))
+	Return: Aqui texto é um teste
+
+	- Split
+	var divisao = texto.Split(" ");  (Obs: quebra pelo caractere selecionado podendo ser , . ou espaço)
+	Console.WriteLine(divisao[0]);
+	Console.WriteLine(divisao[1]);
+	Console.WriteLine(divisao[2]);
+	Console.WriteLine(divisao[3]);
+	Console.WriteLine(divisao[4]);
+	Return: Este
+			texto
+			é 
+			um 
+			teste
+
+	- Substring
+	var resultado = texto.Substring(5, texto.LastIndexOf("o"));
+	Console.WriteLine(resultado);
+	Return: texto é u
+
+	- Trim
+	Console.WriteLine(texto.Trim()); Remove os espaços do começo e do final do texto
+
+String Builder
+	var texto = new StringBuilder();
+	texto.Append("Este texto é um teste");
+	texto.Append("é um teste");
+	texto.Append("Este texto");
+	texto.Append("Este um teste");
+
+	texto.ToString();
+	Console.WriteLine(texto);
+
+Datas
+	var data = new DateTime();
+	Console.WriteLine(data);
+	Return: 01/01/0001 00:00:00
+
+    var data = DateTime.Now;
+    Console.WriteLine(data);
+	Return: 28/11/2022 16:12:22
+
+Formatação Datas:
+	var data = DateTime.Now;
+    var formatada = data.ToString("dd/MM/yyyy");
+    Console.WriteLine(formatada);
+	Return: 29/11/2022
+
+	Exibe o menor formato de data possivel
+	var data = DateTime.Now;
+	var formatada = data.ToString("d");
+    Console.WriteLine(formatada);
+	Return: 29/11/2022
+
+	Exibe o formato completo da data:
+	var data = DateTime.Now;
+	var formatada = data.ToString("D"); 
+    Console.WriteLine(formatada);
+	Return: terça-feira, 29 de novembro de 2022
+
+	Usado para converter, muito utilizado NoSqL
+	var data = DateTime.Now;
+	var formatada = data.ToString("s"); 
+    Console.WriteLine(formatada);
+	Return: 2022-11-29T16:47:52
+
+	Padrão universal bastante utilizado no JSON
+	var data = DateTime.Now;
+	var formatada = data.ToString("u"); 
+    Console.WriteLine(formatada);
+	Return: 2022-11-29 16:53:14Z
+
+    Obs:para meses abreviado: data.ToString("MMM")
+    	para meses por extenso: data.ToString("MMMM")
+
+	Para pegar a cultura da maquina, timezone local do usuario:
+	var atual = CultureInfo.CurrentCulture;
+	Console.WriteLine(DateTime.Now.ToString("D", atual));
+
+	Para aplicações globalizadas usar:
+	var utcDate = DateTime.UtcNow;
+	Obs: Pega a hora bate sem alterar para o GMC
+	Depois transformar a hora global para hora local:
+	Console.WriteLine(utcDate.ToLocalTime()); 
+
+Moeda(Currency):
+	Para salarios que precisa de precisao usar decimal na variavel adicionando m na variavel:
+	decimal valor1 = 10.25m;
+	var valor2 = 10.25m;
+    Console.WriteLine(valor1);
+
+	Formatação de Currency:
+	decimal valor = 10.25m;
+    Console.WriteLine(valor);
+	Muda a forma monetaria de acordo com o pais:
+    Console.WriteLine(valor.ToString(CultureInfo.CreateSpecificCulture("pt-BR")));
+    Console.WriteLine(valor.ToString(CultureInfo.CreateSpecificCulture("en-US")));
+	Return: R$ 10,25
+	Return: $10.25
+
+	Arrendodar valores na media Math.Round:
+	na media: Math.Round
+	para cima: Math.Ceiling 
+	para baixo: Math.Floor
+
+	decimal valor = 10.25m;
+	Console.WriteLine(Math.Round(valor));
+	Return: 10
+
+	Console.WriteLine(Math.Round(valor).ToString("C", CultureInfo.CreateSpecificCulture("pt-BR")));
+	Return: R$ 10,00
+	
+Arrays:
+	var meuArray = new int[4] { 5, 10, 15, 20 };
+ 	
+	Console.WriteLine(meuArray[0]);
+    Console.WriteLine(meuArray[1]);
+    Console.WriteLine(meuArray[2]);
+    Console.WriteLine(meuArray[3]);
+
+    for (int i = 0; i < meuArray.Length; i++)
+    {
+    	Console.WriteLine(meuArray[i]);
+    }
+	Return: 5
+			10
+			15
+			20
+
+    foreach (var item in meuArray)
+    {
+    	Console.WriteLine(item);
+    }
+	Return: 5
+			10
+			15
+			20
+
+Exceptions:
+	Sempre tratar os erros do mais especifico para depois os mais genericos.
+
+	Depois de tratar os erros terminar com o:
+	finally
+	{
+
+	}
+	Se caso vc estiver conectado ao banco de dados ele não trava o banco e não deixa a conexão aberta.
+
+	 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
