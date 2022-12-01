@@ -492,10 +492,10 @@ Manipulando Strings
 	Console.WriteLine(divisao[3]);
 	Console.WriteLine(divisao[4]);
 	Return: Este
-			texto
-			é 
-			um 
-			teste
+		texto
+		é 
+		um 
+		teste
 
 	- Substring
 	var resultado = texto.Substring(5, texto.LastIndexOf("o"));
@@ -520,41 +520,41 @@ Datas
 	Console.WriteLine(data);
 	Return: 01/01/0001 00:00:00
 
-    var data = DateTime.Now;
-    Console.WriteLine(data);
+    	var data = DateTime.Now;
+    	Console.WriteLine(data);
 	Return: 28/11/2022 16:12:22
 
 Formatação Datas:
 	var data = DateTime.Now;
-    var formatada = data.ToString("dd/MM/yyyy");
-    Console.WriteLine(formatada);
+    	var formatada = data.ToString("dd/MM/yyyy");
+    	Console.WriteLine(formatada);
 	Return: 29/11/2022
 
 	Exibe o menor formato de data possivel
 	var data = DateTime.Now;
 	var formatada = data.ToString("d");
-    Console.WriteLine(formatada);
+    	Console.WriteLine(formatada);
 	Return: 29/11/2022
 
 	Exibe o formato completo da data:
 	var data = DateTime.Now;
 	var formatada = data.ToString("D"); 
-    Console.WriteLine(formatada);
+    	Console.WriteLine(formatada);
 	Return: terça-feira, 29 de novembro de 2022
 
 	Usado para converter, muito utilizado NoSqL
 	var data = DateTime.Now;
 	var formatada = data.ToString("s"); 
-    Console.WriteLine(formatada);
+    	Console.WriteLine(formatada);
 	Return: 2022-11-29T16:47:52
 
 	Padrão universal bastante utilizado no JSON
 	var data = DateTime.Now;
 	var formatada = data.ToString("u"); 
-    Console.WriteLine(formatada);
+    	Console.WriteLine(formatada);
 	Return: 2022-11-29 16:53:14Z
 
-    Obs:para meses abreviado: data.ToString("MMM")
+    	Obs:para meses abreviado: data.ToString("MMM")
     	para meses por extenso: data.ToString("MMMM")
 
 	Para pegar a cultura da maquina, timezone local do usuario:
@@ -571,14 +571,14 @@ Moeda(Currency):
 	Para salarios que precisa de precisao usar decimal na variavel adicionando m na variavel:
 	decimal valor1 = 10.25m;
 	var valor2 = 10.25m;
-    Console.WriteLine(valor1);
+    	Console.WriteLine(valor1);
 
 	Formatação de Currency:
 	decimal valor = 10.25m;
-    Console.WriteLine(valor);
+    	Console.WriteLine(valor);
 	Muda a forma monetaria de acordo com o pais:
-    Console.WriteLine(valor.ToString(CultureInfo.CreateSpecificCulture("pt-BR")));
-    Console.WriteLine(valor.ToString(CultureInfo.CreateSpecificCulture("en-US")));
+   	Console.WriteLine(valor.ToString(CultureInfo.CreateSpecificCulture("pt-BR")));
+    	Console.WriteLine(valor.ToString(CultureInfo.CreateSpecificCulture("en-US")));
 	Return: R$ 10,25
 	Return: $10.25
 
@@ -598,27 +598,27 @@ Arrays:
 	var meuArray = new int[4] { 5, 10, 15, 20 };
  	
 	Console.WriteLine(meuArray[0]);
-    Console.WriteLine(meuArray[1]);
-    Console.WriteLine(meuArray[2]);
-    Console.WriteLine(meuArray[3]);
+    	Console.WriteLine(meuArray[1]);
+    	Console.WriteLine(meuArray[2]);
+    	Console.WriteLine(meuArray[3]);
 
-    for (int i = 0; i < meuArray.Length; i++)
-    {
-    	Console.WriteLine(meuArray[i]);
-    }
+    	for (int i = 0; i < meuArray.Length; i++)
+    	{
+    		Console.WriteLine(meuArray[i]);
+    	}
 	Return: 5
-			10
-			15
-			20
+		10
+		15
+		20
 
-    foreach (var item in meuArray)
-    {
-    	Console.WriteLine(item);
-    }
+    	foreach (var item in meuArray)
+    	{
+    		Console.WriteLine(item);
+    	}
 	Return: 5
-			10
-			15
-			20
+		10
+		15
+		20
 
 Exceptions:
 	Sempre tratar os erros do mais especifico para depois os mais genericos.
